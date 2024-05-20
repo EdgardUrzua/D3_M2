@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (width <= 767px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "aside"
+      "header"
+      "main"
+      "footer";
+  }
+
+  header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 70px;
+    background-color: blue;
+  }
+
+  aside {
+    grid-area: aside;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: aquamarine;
+  }
+
+  aside .barras {
+    display: block;
+    justify-content: end;
+    margin-top: 10px;
+  }
+
+  aside .opcion {
+    display: none;
+  }
+
+  aside .title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  aside {
+    height: 10vh;
+  }
+
+  aside i {
+    margin-right: 20px;
+  }
+  main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .card {
+    border: 2px solid black;
+    width: 300px;
+    height: 300px;
+    margin: 7px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card img {
+    width: 90%;
+    height: auto;
+    border-radius: 5%;
+    margin-top: 10px;
+  }
+
+  .card p {
+    margin-top: 10px;
+  }
+
+  .card button {
+    margin-top: 10px;
+    padding: 4px;
+    background-color: #000;
+    color: white;
+  }
+
+  main .pagination {
+    position: sticky;
+    grid-column: span 4; /* Ocupa las 4 columnas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .arrow,
+  .page {
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .arrow:hover,
+  .page.active {
+    background-color: #ddd;
+  }
+
+  .page.active {
+    font-weight: bold;
+  }
+
+  footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    margin-top: 20px;
+  }
+
+  footer i {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  footer p {
+    display: flex;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /* Estilos para tablets */
+
+  body {
+    display: grid;
+    grid-template-areas:
+      "aside aside"
+      "header main"
+      "footer footer";
+  }
+
+  header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: blue;
+    width: 200px;
+  }
+
+  header div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  aside {
+    grid-area: aside;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+  }
+
+  aside .title {
+    display: flex;
+    align-items: center;
+  }
+
+  aside .opcion {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  aside hr {
+    display: none;
+  }
+
+  aside p {
+    padding: 10px;
+  }
+
+  aside .barras {
+    display: none;
+  }
+
+  main {
+    grid-area: main;
+    width: auto;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main .card {
+    border: 2px solid black;
+    width: 375px;
+    height: 340px;
+    margin: 7px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card img {
+    width:230px;
+    height: 110px;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .card p{
+    margin-top: 10px;
+  }
+
+  .card button{
+    margin-top: 10px;
+    color: #ddd;
+    background-color: #000;
+    width: 100px;
+    border-radius: 10px;
+  }
+
+  main .pagination {
+    position: sticky;
+    grid-column: span 2; /* Ocupa las 4 columnas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow,
+  .page {
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .arrow:hover,
+  .page.active {
+    background-color: #ddd;
+  }
+
+  .page.active {
+    font-weight: bold;
+  }
+
+  footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    height: 80px;
+  }
+
+  footer i {
+    color: #ddd;
+    margin-top: 10px;
+  }
+
+  footer p{
+    color: #ddd;
+  }
+}
+
+@media (width >= 993px)  {
+  
+    body {
+    display: grid;
+    grid-template-areas:
+      "aside header"
+      "aside main"
+      "footer main";
+
+    grid-template-columns: 1fr 5fr;
+  }
+
+  header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    align-items: center;
+    background-color: blue;
+    flex-direction: column;
+  }
+
+  header p {
+    height: 30px;
+    margin-right: 15px;
+  }
+
+  label[for="ordenar-por"] {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #ordenar-por {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+
+  .barras {
+    display: none; /* Ocultar icono*/
+  }
+
+  .title1 {
+    display: none;
+  }
+
+  aside {
+    grid-area: aside;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 135px;
+  }
+
+  aside .title {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  aside i {
+    margin-left: -50px;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  aside p {
+    height: 30px;
+    display: flex;
+    text-align: center;
+  }
+
+  main {
+    grid-area: main;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    border: 2px solid black;
+    width: 290px;
+    height: 215px;
+    margin: 7px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card img {
+    width: 230px;
+    height: 110px;
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .card p{
+  margin-top: 10px;
+  }
+
+  .card button{
+  margin-top: 10px;
+  color: #ddd;
+  background-color: #000;
+  width: 100px;
+  border-radius: 10px;
+  }
+
+  main .pagination {
+    position: sticky;
+    grid-column: span 4; /* Ocupa las 4 columnas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .arrow,
+  .page {
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .arrow:hover,
+  .page.active {
+    background-color: #ddd;
+  }
+
+  .page.active {
+    font-weight: bold;
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: blue;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer i {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  footer p {
+    display: flex;
+    text-align: center;
+  }
+}
